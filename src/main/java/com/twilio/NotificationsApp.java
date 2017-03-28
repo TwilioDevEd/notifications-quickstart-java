@@ -2,6 +2,7 @@ package com.twilio;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
+import static spark.Spark.afterAfter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,6 +46,9 @@ public class NotificationsApp {
         configuration.put("TWILIO_APN_CREDENTIAL_SID", System.getenv("TWILIO_APN_CREDENTIAL_SID"));
         configuration.put("TWILIO_GCM_CREDENTIAL_SID", System.getenv("TWILIO_GCM_CREDENTIAL_SID"));
         configuration.put("TWILIO_NOTIFICATION_SERVICE_SID", System.getenv("TWILIO_NOTIFICATION_SERVICE_SID"));
+
+        // Log all requests and responses
+        afterAfter(new LoggingFilter());
 
         // Basic health check - check environment variables have been configured correctly
         get("/", (request, response) -> new ModelAndView(configuration, "index"), new JadeTemplateEngine());

@@ -6,9 +6,9 @@ own apps with Twilio Notifications. Before we begin, we need to collect
 
 Credential | Description
 ---------- | -----------
-Twilio Account SID | Your main Twilio account identifier - [find it on your dashboard](https://www.twilio.com/user/account/settings).
-Twilio APN Credential SID | Adds iOS notification ability to your app - [generate one here](https://www.twilio.com/user/account/ip-messaging/credentials). You'll need to provision your APN push credentials to generate this. See [this](https://www.twilio.com/docs/api/ip-messaging/guides/push-notifications-ios) guide on how to do that. (Optional)
-Twilio GCM Credential SID | Adds Android/GCM notification ability to your app - [generate one here](https://www.twilio.com/user/account/ip-messaging/credentials). You'll need to provision your GCM push credentials to generate this. See [this](https://www.twilio.com/docs/api/ip-messaging/guides/push-notifications-android) guide on how to do that. (Optional)
+Twilio Account SID | Your main Twilio account identifier - [find it on your dashboard](https://www.twilio.com/console).
+Twilio APN Credential SID | Adds iOS notification ability to your app - [generate one here](https://www.twilio.com/console/chat/credentials). You'll need to provision your APN push credentials to generate this. See [this](https://www.twilio.com/docs/api/chat/guides/push-notifications-ios) guide on how to do that. (Optional)
+Twilio GCM Credential SID | Adds Android/GCM notification ability to your app - [generate one here](https://www.twilio.com/console/chat/credentials). You'll need to provision your GCM push credentials to generate this. See [this](https://www.twilio.com/docs/api/chat/guides/push-notifications-android) guide on how to do that. (Optional)
 Twilio Notification_Service SID | Use the CreateServiceUtil class to generate this. Just run 'java -cp target/notification-quickstart-1.0-SNAPSHOT.jar com.twilio.CreateServiceUtil' in your terminal, after you add the above configuration values to the `.env` file.
 
 # Setting up the Java Application
@@ -48,7 +48,7 @@ Now we should be all set! Run the application using the `java -jar` command.
 java -jar target/notification-quickstart-1.0-SNAPSHOT.jar
 ```
 
-Your application should now be running at [http://localhost:4567](http://localhost:4567). 
+Your application should now be running at [http://localhost:4567/](http://localhost:4567/).
 
 # Usage
 
