@@ -16,7 +16,7 @@ public class NotifyUtil {
         try {
             NotificationCreator creator = Notification.create(serviceSid);
             creator.setIdentity(args[0]);
-            creator.setBody("Hello " + args[0]);
+            creator.setBody("Hello World!");
             Notification notification = creator.execute();
             System.out.println(notification.toString());
         } catch(Exception e) {
