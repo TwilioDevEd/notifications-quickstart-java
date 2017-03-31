@@ -7,18 +7,20 @@ import com.twilio.sdk.resource.notifications.v1.service.Notification;
 public class NotifyUtil {
 
     public static void main(String args[]) {
-
         // Authenticate with Twilio
         Twilio.init(System.getenv("TWILIO_ACCOUNT_SID"), System.getenv("TWILIO_AUTH_TOKEN"));
 
         //Send a notification
         String serviceSid = System.getenv("TWILIO_NOTIFICATION_SERVICE_SID");
-        NotificationCreator creator = Notification.create(serviceSid);
-        creator.setIdentity(args[0]);
-        creator.setBody("Hello " + args[0]);
-        Notification notification = creator.execute();
 
-        System.out.println(notification.toString());
-
+        try {
+            NotificationCreator creator = Notification.create(serviceSid);
+            creator.setIdentity(args[0]);
+            creator.setBody("Hello " + args[0]);
+            Notification notification = creator.execute();
+            System.out.println(notification.toString());
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
